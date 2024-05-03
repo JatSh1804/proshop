@@ -8,6 +8,7 @@ import Message from '../components/Message';
 import Loader from '../components/Loader';
 import { useCreateOrderMutation } from '../slices/ordersApiSlice';
 import { clearCartItems } from '../slices/cartSlice';
+import { Map } from '../components/MapComponent';
 
 const PlaceOrderScreen = () => {
   const navigate = useNavigate();
@@ -142,6 +143,9 @@ const PlaceOrderScreen = () => {
                 {isLoading && <Loader />}
               </ListGroup.Item>
             </ListGroup>
+          </Card>
+          <Card>
+            <Map />
           </Card>
         </Col>
       </Row>

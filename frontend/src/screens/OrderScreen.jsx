@@ -12,6 +12,7 @@ import {
   useGetPayPalClientIdQuery,
   useDeliverOrderMutation,
 } from '../slices/ordersApiSlice';
+import { Map } from '../components/MapComponent';
 
 const OrderScreen = () => {
   const { id: orderId } = useParams();
@@ -37,6 +38,8 @@ const OrderScreen = () => {
   } = useGetPayPalClientIdQuery();
 
   const { userInfo } = useSelector((state) => state.auth);
+
+
 
   useEffect(() => {
     if (!errorPayPal && !loadingPayPal && paypal.clientId) {
@@ -231,6 +234,10 @@ const OrderScreen = () => {
                   </ListGroup.Item>
                 )}
             </ListGroup>
+          </Card>
+          <br />
+          <Card>
+            <Map />
           </Card>
         </Col>
       </Row>
